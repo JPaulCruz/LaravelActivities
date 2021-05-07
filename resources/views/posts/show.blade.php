@@ -15,10 +15,14 @@
                     Created At : {{ $post->created_at }} <br>
                     Post Image: 
                     @if ($post->img)
-                        <img src="{{ URL::asset('storage/img/'.$post->img) }} " style="width:100px; height:100px;"/>
+                   
+                        <img src="{{ asset('/storage/img/'.$post->img) }} ">
                     @else
                         No image available
                     @endif
+
+                    @include('/posts/comments')
+                    
                 </div>
             </div>
         </div>
